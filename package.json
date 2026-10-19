@@ -1,0 +1,51 @@
+{
+  "name": "dsh-boot-animation-custom",
+  "version": "0.3.0",
+  "description": "DSH 启动加载动画（定制版）：多片随机/固定播放、素材上传、一级设置页；不改 DSH 本体源码。",
+  "license": "MIT",
+  "author": "lxj5820",
+  "contributors": [
+    "custom build: local"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "boot-animation",
+    "splash"
+  ],
+  "type": "module",
+  "main": "entry.js",
+  "exports": {
+    ".": "./entry.js",
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "assets",
+    "lib",
+    "src",
+    "cordis.patch.yml",
+    "entry.js",
+    "package.json"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "*"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.4"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
